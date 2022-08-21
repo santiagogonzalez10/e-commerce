@@ -188,3 +188,12 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+h1{
+  text-align: center;
+}
+p.parrafo{
+  text-align: center;
+}
+.email{
+  text-align: center;
+}
