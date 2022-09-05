@@ -29,21 +29,60 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" id="usuarioProductos" href="my-profile.html"></a>
+            </li>
         </ul>
       </div>
     </div>
   </nav>
   <main class="pb-5 container">
     <br>
-    <h1>Productos</h1>
+    <h1><strong>Productos</strong></h1>
     <br>
-    <p class="parrafo">Veras aqui todos los procutos de la categoria <strong>Autos</strong></p>
-    <br>
+    <p class="parrafo" id="parrafoProductos">Veras aqui todos los productos de la categoria </p>
     <div class="container">
-      <div id="autos" ></div>
+      <div class="row">
+        <label for="input-busqueda" class="text col-md-3" id="labelBuscador">Busca tus productos aquí:</label>
+        <input type="search" class="col-md-6 mb-2" name="buscador" id="input-busqueda" placeholder="Aquí puedes encontrar los artículos que buscas...">
+      </div>
+      <div class="row">
+        <div class="col text-end">
+          <div class="btn-group btn-group-toggle mb-6" data-bs-toggle="buttons">
+            <label for="ordenarPorPrecio1" class="text my-2 mx-2">Ordena tus articulos por precio y relevancia:</label>
+            <input type="radio" class="btn-check" name="options" id="ordenarPorPrecio1" checked>
+            <label class="btn btn-light" for="ordenarPorPrecio1"><i class="fas fa-sort-amount-down mr-1">$</i></label>
+            <input type="radio" class="btn-check" name="options" id="ordenarPorPrecio2" checked>
+            <label class="btn btn-light" for="ordenarPorPrecio2"><i class="fas fa-sort-amount-up mr-1">$</i></label>
+            <input type="radio" class="btn-check" name="options" id="ordenarPorRelevancia" checked>
+            <label class="btn btn-light" for="ordenarPorRelevancia"><i class="fas fa-sort-amount-down mr-1">Rel</i></label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Rango precios:</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangoMinimo">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangoMaximo">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                
+                <button class="btn btn-light btn-block" id="filtrarRango">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="limpiarRango">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+      <div id="ListaProductos"></div>
     </div>
   </main>
   <footer class="text-muted">

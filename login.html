@@ -26,18 +26,18 @@
         <div class="mb-3">
           <label for="email" class="form-label offset-lg-5">Email:</label>
           <input type="email" class="form-control" id="email" placeholder="Email" autofocus>
+          <div id="errorEmail"></div>        
         </div>
         <!--Contraseña  -->
         <div class="mb-3">
           <label for="contrasenia" class="form-label offset-lg-5">Contraseña:</label>
           <input type="password" class="form-control" id="contrasenia" placeholder="Contraseña">
+          <div id="errorPass"></div>
           <br>
         <!--Boton de ingresar  -->
-          <button type="submit" class="w-100 btn btn-lg btn-primary" onclick="return enviarFormulario()" value="Enviar">Enviar</button>
+          <button type="submit" class="w-100 btn btn-lg btn-primary" value="Enviar" id="enviar">Enviar</button>
         </div>
         </form>
-        <!-- Mensaje de error del formulario login  -->
-        <div id="error"></div>
       </div>
     </div>
   </main>

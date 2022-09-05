@@ -6,6 +6,17 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
+//Nombre de usuario en barra de navegación
+
+let nombreUsuario = [];
+const usuarioEnCategorias = document.getElementById("usuarioCategorias");
+if(localStorage.getItem("nombre-usuario").value != ""){
+        nombreUsuario.value = localStorage.getItem("nombre-usuario");
+        usuarioEnCategorias.innerHTML = nombreUsuario.value;
+};
+
+//Funcion que ordena y filtra las categorias
+
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)

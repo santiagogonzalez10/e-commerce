@@ -197,3 +197,13 @@ p.parrafo{
 .email{
   text-align: center;
 }
+#labelBuscador{
+  font-size: larger;
+  margin-left: 75px;
+}
+#parrafoProductos{
+  font-size: larger;
+}
+.ocultar{
+  display: none;
+}

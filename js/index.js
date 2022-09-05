@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(){
-    //* Redireccionar el index al login//
-    if(localStorage.getItem("redireccion") == 0){
-        location.assign("login.html"); //Condicional que en caso de que el valor del item ¨redireccion¨ sea 0, redirecciona al login.html
+    //* Redireccionar del index al login//
+    if(localStorage.getItem("nombre-usuario") == null){
+        window.location.href = "login.html"; //Condicional que en caso de que el item "redireccion" no exista, redirecciona al login
     };
-    let valor = 0; //Creo una variable de valor 0, que utilizo para redireccionar al login
-    localStorage.setItem("redireccion", valor); //Creo un item en el localStorage y uso la variable "valor" como valor
+
+    // Agregar nombre de usuario a la barra de navegacion
+    let nombreUsuario = [];
+    const usuarioEnIndex = document.getElementById("usuarioIndex");
+    if(localStorage.getItem("nombre-usuario").value != ""){
+        nombreUsuario.value = localStorage.getItem("nombre-usuario");
+        usuarioEnIndex.innerHTML = nombreUsuario.value;
+    };
 
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
