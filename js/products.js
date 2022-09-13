@@ -14,8 +14,6 @@ const inputDeBusqueda = document.getElementById("input-busqueda");
 const botonBusqueda = document.getElementById("boton-busqueda");
 const celdasProductos = document.getElementById("ListaProductos");
 
-
-
 //Funcion para imprimir el contenido del JSon en mi categoria
 function ListasDeProductos(productosCategoriaActual){
 
@@ -30,7 +28,7 @@ function ListasDeProductos(productosCategoriaActual){
                   
         //Uso el productosCategoriaActual con el valor "data.products" que son los objetos que voy a imprimir en pantalla
             contenidoDeCategoria += `
-            <div class="list-group-item list-group-item-action cursor-active" id="articulosEnVenta">
+            <div onclick="guardarIDProducto(${itemDeCategoria.id})" class="list-group-item list-group-item-action cursor-active" id="articulosEnVenta">
                 <div class="row">
                     <div class="col-3">
                         <img src="${itemDeCategoria.image}" alt="${itemDeCategoria.description}" class="img-thumbnail">
@@ -102,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productosCategoriaActual = result.data.products; //Si el status del result es "ok", usamos el campo 
             //"products" del JSon que son los objetos que vamos a imprimir en pantalla
             ListasDeProductos(productosCategoriaActual); //Usamos la funcion showCategoriesList con el valor del productosCategoriaActual 
-            console.log(productosCategoriaActual);
+            //console.log(productosCategoriaActual);
      }
     });
 
@@ -173,16 +171,16 @@ inputDeBusqueda.addEventListener("keyup", (e)=>{ //Evento que escucha el conteni
     if(e.target.matches("#input-busqueda")){ //Si se escribe algo en el input...
         document.querySelectorAll("#articulosEnVenta").forEach(elemento =>{ //Recorremos todos los articulos y sus descripciones
         elemento.textContent.toLowerCase() //Revisamos si el textContent del elemento que recorremos (pasamos todo a minusculas)..
-        .includes(e.target.value.toLowerCase()) //Revisamos si incluye lo que estamos buscando
+        .includes(e.target.value.toLowerCase()) //...si incluye lo que estamos buscando
             ?elemento.classList.remove("ocultar") //Removemos la clase "ocultar" de los articulos que si cumplen
             :elemento.classList.add("ocultar") //Le agregamos la clase ocultar a los articulos que no cumplen con las condiciones de busqueda
         })
     }
-})
-/*
-.ocultar{
-    display: none;
-} */
+});
 
-
+//Funcion para setear el id del producto en el localStorage
+function guardarIDProducto(id) {
+    localStorage.setItem("ID-Producto", id);
+    window.location = "product-info.html"
+}
 

@@ -11,6 +11,11 @@ const EXT_TYPE = ".json";
 const idDeCategoria = localStorage.getItem("catID");
 const PRODUCTOS_URL = PRODUCTS_URL+idDeCategoria+EXT_TYPE; 
 
+//URL dinamica para los productos individuales
+const idDeProducto = localStorage.getItem("ID-Producto");
+const PRODUCTO_INDIVIDUAL_URL = PRODUCT_INFO_URL+idDeProducto+EXT_TYPE;
+
+
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
