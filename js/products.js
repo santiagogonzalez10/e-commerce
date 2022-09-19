@@ -1,4 +1,4 @@
-let productosCategoriaActual = []; //Primero creo un array vacio
+let productosCategoriaActual = []; //Array vacio para imprimir los productos
 
 //Constantes para filtrar precios y relevancia
 const ordenarPrecios1 = document.getElementById("ordenarPorPrecio1");

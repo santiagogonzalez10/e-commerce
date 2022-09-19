@@ -11,9 +11,10 @@ const EXT_TYPE = ".json";
 const idDeCategoria = localStorage.getItem("catID");
 const PRODUCTOS_URL = PRODUCTS_URL+idDeCategoria+EXT_TYPE; 
 
-//URL dinamica para los productos individuales
+//URL dinamica para los productos individuales y comentarios
 const idDeProducto = localStorage.getItem("ID-Producto");
 const PRODUCTO_INDIVIDUAL_URL = PRODUCT_INFO_URL+idDeProducto+EXT_TYPE;
+const COMENTARIOS_URL = PRODUCT_INFO_COMMENTS_URL+idDeProducto+EXT_TYPE;
 
 
 let showSpinner = function(){
@@ -51,4 +52,3 @@ let getJSONData = function(url){
         return result; //Function que atrapa el error de un fetch fallido
     });
 };
-
