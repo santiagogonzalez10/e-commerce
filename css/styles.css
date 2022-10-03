@@ -207,11 +207,9 @@ p.parrafo{
 .ocultar{
   display: none;
 }
-#formComms{
-  margin-left: 7%;
-}
 #productInfo{
   font-size: 150%;
+  align-content: center;
 }
 .checked{
   color: #ffa500;

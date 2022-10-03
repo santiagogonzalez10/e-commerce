@@ -156,15 +156,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 });
 
-//Nombre de usuario en barra de navegación
-
-let nombreUsuario = [];
-const usuarioEnProductos = document.getElementById("usuarioProductos");
-if(localStorage.getItem("nombre-usuario").value != ""){
-      nombreUsuario.value = localStorage.getItem("nombre-usuario");
-      usuarioEnProductos.innerHTML = nombreUsuario.value;
-};
-
 //Buscador por palabras/letras clave
 
 inputDeBusqueda.addEventListener("keyup", (e)=>{ //Evento que escucha el contenido que se escribe en el buscador

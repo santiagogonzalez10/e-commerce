@@ -52,3 +52,26 @@ let getJSONData = function(url){
         return result; //Function que atrapa el error de un fetch fallido
     });
 };
+
+//Agregar usuario a la barra de navegacion
+
+let nombreUsuario = [];
+const usuarioEnProductos = document.getElementById("perfilUser");
+if(localStorage.getItem("nombre-usuario").value != ""){
+      nombreUsuario.value = localStorage.getItem("nombre-usuario");
+      usuarioEnProductos.innerHTML = `<div class="dropdown my-2">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      ${nombreUsuario.value}
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+        <li><a class="dropdown-item" onclick="cerrarSession()" href="login.html">Cerrar sesión</a></li>
+      </ul>
+    </div>`;
+};
+
+function cerrarSession(){
+  localStorage.removeItem("nombre-usuario");
+  window.location = "login.html"
+};
