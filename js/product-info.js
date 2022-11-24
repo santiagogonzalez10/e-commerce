@@ -10,11 +10,10 @@ function infoRelacionado(id){
 function mostrarInformacion(informacionProducto){
 
     let contenidoDeProducto = "";
-    let {name, description, cost, currency, images: images, soldCount: soldCount, category: category, relatedProducts: productosRelacionados} = informacionProducto;
-    console.log(productosRelacionados);
+    let {id, name, description, cost, currency, images: images, soldCount: soldCount, category: category, relatedProducts: productosRelacionados} = informacionProducto;
 
-    contenidoDeProducto += `   
-    <h2 class="mt-4">${name}</h2>
+    contenidoDeProducto += `  
+    <h2 class="mt-4">${name} </h2>
     <hr class="col-sm-10">
         <label class="mt-1"><strong>Precio</strong></label>
         <p class="mt-1">${currency}  ${cost}</p>
@@ -138,7 +137,7 @@ agregarComentario.addEventListener("click", (e)=>{
         let fecha = new Date().toLocaleDateString('es', { day: "numeric", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit" })   
     if(opcionEstrellas.value=1){
         comentar+= `
-        <div class="card border-danger my-1" style="background-color: #fff0d3;">
+        <div class="card border-danger my-1 mx-2" style="background-color: #fff0d3;">
                 <p id="estrellas" class="mx-3"><strong>${localStorage.getItem("nombre-usuario")}</strong> - ${fecha} - ${stars}</p>
                 <p class="mx-3">${valorOpinion.value}</p>
             </div>
@@ -156,6 +155,7 @@ document.addEventListener("DOMContentLoaded", (e)=>{
     .then(function(result){
         if (result.status === "ok"){ 
             informacionProducto = result.data; 
+            console.log(informacionProducto)
             mostrarInformacion(informacionProducto);
         }
     })
@@ -172,3 +172,8 @@ document.addEventListener("DOMContentLoaded", (e)=>{
         }
     })
   });
+
+/*function comprarItem(id){
+    localStorage.setItem("ID-Carrito", id);
+    alert("Se agrego el producto al carrito");
+};*/

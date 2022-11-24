@@ -16,6 +16,11 @@ const idDeProducto = localStorage.getItem("ID-Producto");
 const PRODUCTO_INDIVIDUAL_URL = PRODUCT_INFO_URL+idDeProducto+EXT_TYPE;
 const COMENTARIOS_URL = PRODUCT_INFO_COMMENTS_URL+idDeProducto+EXT_TYPE;
 
+//URL para imprimir en carrito
+const idDeCarrito = localStorage.getItem("ID-Carrito");
+const PRODUCTO_COMPRADO_URL = PRODUCT_INFO_URL+idDeCarrito+EXT_TYPE;
+
+
 
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -73,5 +78,10 @@ if(localStorage.getItem("nombre-usuario").value != ""){
 
 function cerrarSession(){
   localStorage.removeItem("nombre-usuario");
-  window.location = "login.html"
+  localStorage.removeItem("user-name1");
+  localStorage.removeItem("user-name2");
+  localStorage.removeItem("user-surName1");
+  localStorage.removeItem("user-surName2");
+  localStorage.removeItem("user-phone");
+  window.location = "login.html";
 };

@@ -36,10 +36,125 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container mx-6">
+      <div>
+        <h1 class="my-4"> Carrito de compras</h1>
+        <h4 class="d-flex justify-content-center"><u>Articulos a comprar</u></h4>
       </div>
+      <div class="row">
+        <div class="d-flex justify-content-evenly col-md-10 col-sm-10">
+          <table class="list-group-item">
+            <tr style="border: 2px solid black;">
+              <th></th>
+              <th>Producto</th>
+              <th>Costo</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+            <tr id="contenedor">
+            </tr>
+            <tr id="itemComprado"></tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <form id="formulario" class="">
+        <fieldset>
+          <div class="offset-1 my-3">
+            <h4>Tipo de envio:</h4>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="opcPremium">
+              <label class="form-check-label" for="opcPremium">
+                Premium 2 a 5 dias (15%)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="opcExpress">
+              <label class="form-check-label" for="opcExpress">
+                Express 5 a 8 dias (7%)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="opcStandard">
+              <label class="form-check-label" for="opcStandard">
+                Standard 12 a 15 dias (5%)
+              </label>
+            </div>
+
+            <h4 class="my-3">Dirección de envio:</h4>
+            <form id="formularioDireccion" class="">
+              <label for="calle" class="my-2">Calle</label>
+              <input type="text" id="calle" class="mx-4">
+              <label for="numero">Numero</label>
+              <input type="email" id="numero">
+              <br>
+              <label for="esquina" class="my-4">Esquina</label>
+              <input id="esquina" type="text"></input>
+            </form>
+
+            </ul>
+          </div>
+      </form>
+    </div>
+    <div class="offset-1 my-1">
+      <h4>Costos:</h4>
+      <div class="card border-danger col-10">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item border-info"><strong>Subtotal </strong> <br> <small>Costo unitario del producto por
+              cantidad</small><span class="d-flex justify-content-end mx-5" id="costosSubtotal"></span> </li>
+          <li class="list-group-item border-info"><strong>Costo de envio</strong> <br> <span class="small"> Segun el
+              tipo de envio</span><span class="d-flex justify-content-end mx-5" id="costoEnvio"></span></li>
+          <li class="list-group-item my-3"><strong>Total($)</strong><span class="d-flex justify-content-end mx-5"
+              id="totalAPagar"></span> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card offset-1 my-3">
+      <h4>Forma de pago:</h4>
+      <p><span id="formPagoSeleccionada">No has seleccionado</span> - <a href="" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Seleccionar</a></p>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="formaDePago">Forma de pago</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="radio" id="tarjetaC" name="fav_language" value="tarjeta">
+              <label for="tarjetaC">Tarjeta de credito</label>
+              <hr>
+              <form action="" class="mx-4 justify-content-between">
+                <label for="numTarjeta" class="my-4">Numero de tarjeta</label>
+                <input type="text" id="numTarjeta" class="mx-4">
+                <br>
+                <label for="codigoSeguridad">Codigo de seguridad</label>
+                <input type="text" id="codigoSeguridad">
+                <br>
+                <label for="vencimientoTarjeta" class="my-4">Vencimiento(MM/AA)</label>
+                <input id="vencimientoTarjeta" type="text"></input>
+              </form>
+              <br>
+              <input type="radio" id="transferenciaB" name="fav_language" value="transferencia">
+              <label for="transferencia">Transferencia bancaria</label>
+              <hr>
+              <label for="numeroCuenta" class="my-4">Numero de cuenta</label>
+              <input id="numeroCuenta" type="text"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cartel"></div>
+    <div class="offset-1 my-3">
+      <button class="btn btn-primary col-8" id="finalizarCompra">Finalizar compra</button>
     </div>
   </main>
   <footer class="text-muted">
